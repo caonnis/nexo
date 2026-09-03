@@ -9,14 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#14171C;
-    --ink-soft:#2A2E35;
-    --paper:#F2EFE7;
-    --paper-dim:#E7E2D5;
-    --brass:#9C7A3C;
-    --teal:#3C6960;
-    --muted:#6B7178;
-    --rule: rgba(20,23,28,0.14);
+    --ink:#102522;
+    --ink-soft:#314440;
+    --paper:#F5F7F3;
+    --paper-dim:#E7EEE8;
+    --brass:#B78345;
+    --teal:#1E655C;
+    --muted:#687975;
+    --rule: rgba(16,37,34,0.14);
     --sans: 'Roboto', system-ui, sans-serif;
     --mono: 'Roboto Mono', ui-monospace, monospace;
     --shadow: 0 14px 34px rgba(20,23,28,0.14);
@@ -48,7 +48,7 @@
   ::selection{ background:var(--brass); color:var(--paper); }
   :focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
 
-  .wrap{ max-width:900px; margin:0 auto; padding:0 28px; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 36px; }
 
   /* ---------- NAV ---------- */
   header.site{
@@ -59,7 +59,7 @@
   }
   .nav-row{
     display:flex; align-items:center; justify-content:space-between;
-    padding:18px 28px; max-width:900px; margin:0 auto;
+    padding:16px 36px; max-width:1120px; margin:0 auto;
   }
   .brand{
     font-family:var(--mono); font-size:15px; letter-spacing:0.02em;
@@ -78,15 +78,20 @@
   .nav-toggle{ display:none; }
 
   /* ---------- HERO ---------- */
-  .hero{ padding:88px 0 64px; border-bottom:1px solid var(--rule); }
+  .hero{
+    padding:112px 0 84px; border-bottom:1px solid var(--rule);
+    background:
+      radial-gradient(circle at 88% 18%, rgba(183,131,69,.16), transparent 27%),
+      linear-gradient(135deg, rgba(231,238,232,.7), transparent 58%);
+  }
   .hero .kicker{
     font-family:var(--mono); font-size:12.5px; color:var(--teal);
     margin:0 0 22px; display:flex; align-items:center; gap:10px;
   }
   .hero .kicker::before{ content:""; width:22px; height:1px; background:var(--teal); display:inline-block; }
   .hero h1{
-    font-size:clamp(34px, 5vw, 52px); font-weight:700; line-height:1.16;
-    margin:0 0 22px; max-width:15ch; letter-spacing:-0.015em;
+    font-size:clamp(42px, 6.4vw, 76px); font-weight:700; line-height:1.04;
+    margin:0 0 26px; max-width:12ch; letter-spacing:-0.045em;
   }
   .hero .lede{ font-size:18.5px; color:var(--ink-soft); max-width:56ch; margin:0 0 16px; }
   .hero .lede em{ font-style:normal; font-weight:600; color:var(--ink); }
@@ -188,10 +193,10 @@
   }
 
   /* ---------- SERVICES (card grid, no icons) ---------- */
-  .services-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; }
+  .services-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
   .service-card{
     border:1px solid var(--rule); border-radius:var(--r-md);
-    padding:26px 24px; background:var(--paper); text-align:left; cursor:pointer;
+    padding:30px 28px; background:rgba(255,255,255,.42); text-align:left; cursor:pointer;
     font-family:var(--sans); color:var(--ink);
     display:flex; flex-direction:column; gap:12px;
     transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, opacity .2s ease;
@@ -288,6 +293,10 @@
   footer .wrap{ display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:12px; color:var(--muted); flex-wrap:wrap; gap:10px; }
 
   @media (max-width: 720px){
+    .wrap{ padding-left:20px; padding-right:20px; }
+    .nav-row{ padding-left:20px; padding-right:20px; }
+    .hero{ padding-top:76px; }
+    .hero h1{ font-size:clamp(40px, 13vw, 58px); }
     nav.links{
       position:absolute; top:100%; left:0; right:0; background:var(--paper);
       border-bottom:1px solid var(--rule); flex-direction:column; gap:4px; padding:10px; display:none;
